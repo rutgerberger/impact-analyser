@@ -1,19 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './css/home.css'
 
 
 function NavBar({ }) {
     return(
-        <nav className='mainNav'>
-            <Link className='contentleft' to='/'>
-                <img className='logo' src="./images/logo-taskdivider.jpg" alt="Logo Task Divider" />
+        <nav className='navbar'>
+            <Link className='nav-button' to='/'>
+                Impact Analyser
             </Link>
-           <div className="mijnDiv" > </div>
-          
-           <h1 className='content' >Impact Analyser</h1>
-           
-           <div className="mijnDiv" > </div>
-            <Link className='contentright' to='/profile'>
+            <Link className='nav-button' to='/'>
+                Contact
             </Link>
         </nav> 
     );

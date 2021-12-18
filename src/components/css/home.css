@@ -1,0 +1,86 @@
+/*homepage css*/
+
+div.container {
+
+
+}
+
+/* Used for styling the page */
+div.styling {
+
+    font-family: Arial;
+	color:  white;
+
+}
+
+div.fancy-image {
+
+	background: url(../../images/abstract-1264071.png);
+	height: 400px;
+	background-position:  bottom;
+	background-size:  100%;
+
+}
+
+div.header {
+
+	padding: 4% 1% 1% 1%;
+	width:  100%;
+	background: url(../../images/background-taskdivider.jpg);
+	box-sizing:  border-box;
+	background-size: 100%;
+
+}
+
+h2 {
+	margin:  10px;
+}
+div.header p{
+	font-size: 11px;
+	margin:  0	;
+	margin-left: 20px;
+}
+
+.button-home {
+
+	float: left;
+	width: 33%;
+	text-align: center;
+	padding: 10px 4px;
+	box-sizing:  border-box;
+	background: #66aa77;
+	/*background: #ef6d6d;*/
+	text-decoration:  none;
+	color: black;
+
+}
+
+
+.button-home:hover {
+
+	background: #4d7761;
+	color: #fff;
+
+}
+
+.logo-image {
+	width: 20px;
+}
+
+.navbar {
+	padding: 5px;
+	background-color: #00264b;
+}
+
+.nav-button {
+	padding: 0px 40px;
+	text-decoration:  none;
+	color:  #ccc;
+	font-size: 11px;
+
+}
+
+.nav-button:hover {
+	color: #fff;
+
+}

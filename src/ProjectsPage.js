@@ -12,7 +12,7 @@ function ProjectsPage() {
     }
 
     return(
-        <div>
+        <div className='styling'>
         <NavBar />
         <div>
             <div >
