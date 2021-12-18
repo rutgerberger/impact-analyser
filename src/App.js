@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import { useAuth0 } from '@auth0/auth0-react'
 
 import HomePage from './HomePage'
 import AboutPage from './AboutPage';
@@ -12,50 +11,14 @@ import NewProjectPage from './NewProjectPage';
 import ProjectPage from './ProjectPage';
 import NotAuthorizedPage from './NotAuthorizedPage';
 import UserManagementPage from './UserManagementPage';
-import { FaViadeoSquare } from 'react-icons/fa';
 
 
 function App() {
-    const { user, loginWithPopup, isAuthenticated, isLoading, logout } = useAuth0();
 
-    const [users, setUsers] = useState([])
 
-    const getUsers = async () => {
-        try {
-            const res = await fetch(`http://localhost:3001/users`, {
-                method: 'GET',
-            })
-        console.log(res)
-        const data = await res.json()
-        console.log(data)
-        setUsers(data);
-        } catch (error) {
-            console.error(error.message)
-        }
-    }
-
-    useEffect(() => {
-        getUsers();
-    }, [])
-
-    const checkAuthorized = () => {
-        var authorized = false
-        for (const index in users) {
-            if (users[index].email === user.email && users[index].removed === false) {
-                authorized = true
-            }
-        }
-        return authorized
-    }
-
-    if (isLoading) {
-        return (
-            <LoadingPage/>
-      )
-    }
     
-    if (isAuthenticated) {
-        if (checkAuthorized()) {
+    if (true) {
+        if (true) {
             return (
                 <Router>
                     {/* add different pages here*/}
@@ -70,13 +33,13 @@ function App() {
             );
         } else {
             return (
-                <NotAuthorizedPage text='Log out' onClick={logout}/>
+                <NotAuthorizedPage text='Log out'/>
             )
         }
         
     } else {
         return (
-            <LoginPage onClick={loginWithPopup}/>
+            <LoginPage />
         )
     }
   
