@@ -7,7 +7,7 @@ function NotAuthorizedPage({ text, onClick }) {
     return(
         <>
             <h1>Not Authorized</h1>
-            <p>Reach out to C-job to get white-listed</p>
+            <p>You are not part of this project!</p>
             <Button text={text} onClick={onClick}/>
         </>
     )
