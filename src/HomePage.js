@@ -19,7 +19,7 @@ function HomePage() {
           <div className= 'content-container'>
               <Link to='/projects'className='button-home'>
 
-                <div style= {{height: "50px"}}>
+                <div>
                   Projects
                 </div>
 
@@ -33,7 +33,7 @@ function HomePage() {
               </Link>
               <Link to='/about' className='button-home'>
 
-                <div style= {{height: "35px"}}>
+                <div>
                   About
                 </div>
 

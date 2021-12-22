@@ -2,8 +2,8 @@
 
 div.container {
 
-
 }
+
 
 /* Used for styling the page */
 div.styling {
@@ -46,7 +46,7 @@ div.header p{
 	float: left;
 	width: 33%;
 	text-align: center;
-	padding: 10px 4px;
+	padding: 9px 4px;
 	box-sizing:  border-box;
 	background: #66aa77;
 	/*background: #ef6d6d;*/
@@ -60,6 +60,13 @@ div.header p{
 
 	background: #4d7761;
 	color: #fff;
+
+}
+
+.button-new-project {
+
+	background: #fc8378;
+	width: 100%;
 
 }
 
@@ -83,4 +90,58 @@ div.header p{
 .nav-button:hover {
 	color: #fff;
 
+}
+
+div.left-tile {
+	float: left;
+	width: 20%;
+	text-align: right;
+	color: black;
+	margin-top: 5px 0px;
+	padding: 5px;
+	box-sizing:  border-box;
+}
+
+div.left-tile ul {
+	
+    list-style-type: none;
+    padding: 0;
+	margin: 5px;
+	padding:  4px;
+
+}
+
+
+div.left-tile li {
+	margin-top: 10px;
+	font-size: 10px;
+}
+
+div.project-tile {
+	float: left;
+	padding: 5px;
+	/*background-color: #fc8378;*/
+	background-color: #66aa77;
+	margin: 5px 0px;
+	width: 80%;
+	box-sizing:  border-box;
+}
+
+
+
+div.project-tile ul {
+	
+    list-style-type: none;
+    padding: 0;
+	margin: 5px;
+	padding:  4px;
+}
+div.project-tile ul .project-tile-title {
+	background-color: rgba(252,131,120,0.1);
+	font-size: 20px;
+}
+
+.project-tile li {
+	margin-top: 10px;
+	font-size: 10px;
 }
