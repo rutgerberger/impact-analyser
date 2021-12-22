@@ -21,7 +21,7 @@ function App() {
                     <Route exact path="/profile" component={ProfilePage}/>
                     <Route exact path="/projects" component={ProjectsPage}/>
                     <Route exact path="/new" component={NewProjectPage}/>
-                    <Route exact path="/projects/:p_id/:v_id" component={ProjectPage}/>
+                    <Route exact path="/edit" component={ProjectPage}/>
                 </Router>
             );
   

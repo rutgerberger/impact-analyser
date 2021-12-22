@@ -5,6 +5,12 @@ div.container {
 }
 
 
+table td {
+	border: 1px solid black;
+	margin: 0;
+	padding: 4px;
+}
+
 /* Used for styling the page */
 div.styling {
 
@@ -15,7 +21,7 @@ div.styling {
 
 div.fancy-image {
 
-	background: url(../../images/abstract-1264071.png);
+	background: url(../../images/background-2.jpg);
 	height: 400px;
 	background-position:  bottom;
 	background-size:  100%;
@@ -26,7 +32,8 @@ div.header {
 
 	padding: 4% 1% 1% 1%;
 	width:  100%;
-	background: url(../../images/background-taskdivider.jpg);
+	/*background: url(../../images/background-taskdivider.jpg);*/
+	background-color: #E44860;
 	box-sizing:  border-box;
 	background-size: 100%;
 
@@ -48,8 +55,9 @@ div.header p{
 	text-align: center;
 	padding: 9px 4px;
 	box-sizing:  border-box;
-	background: #66aa77;
+	/*background: #66aa77;*/
 	/*background: #ef6d6d;*/
+	background-color: #BACAD9;
 	text-decoration:  none;
 	color: black;
 
@@ -58,14 +66,16 @@ div.header p{
 
 .button-home:hover {
 
-	background: #4d7761;
-	color: #fff;
+	/*background: #4d7761;*/
+	background: #EEF5DB;
+	color: #444;
 
 }
 
 .button-new-project {
 
-	background: #fc8378;
+	/*background: #fc8378;*/
+	background-color: #E44860;
 	width: 100%;
 
 }
@@ -76,7 +86,8 @@ div.header p{
 
 .navbar {
 	padding: 5px;
-	background-color: #00264b;
+	/*background-color: #00264b;*/
+	background-color: #011826;
 }
 
 .nav-button {
@@ -97,7 +108,7 @@ div.left-tile {
 	width: 20%;
 	text-align: right;
 	color: black;
-	margin-top: 5px 0px;
+	margin: 5px 0px;
 	padding: 5px;
 	box-sizing:  border-box;
 }
@@ -113,7 +124,7 @@ div.left-tile ul {
 
 
 div.left-tile li {
-	margin-top: 10px;
+	margin-top: 11px;
 	font-size: 10px;
 }
 
@@ -121,9 +132,11 @@ div.project-tile {
 	float: left;
 	padding: 5px;
 	/*background-color: #fc8378;*/
-	background-color: #66aa77;
+	/*background-color: #66aa77;*/
+	background-color: #BACAD9;
+	color: #011826;
 	margin: 5px 0px;
-	width: 80%;
+	width: 70%;
 	box-sizing:  border-box;
 }
 
@@ -137,11 +150,21 @@ div.project-tile ul {
 	padding:  4px;
 }
 div.project-tile ul .project-tile-title {
-	background-color: rgba(252,131,120,0.1);
-	font-size: 20px;
+	/*background-color: rgba(252,131,120,0.1);*/
+	font-size: 16px;
+}
+
+div.project-tile ul li {
+	border-bottom: 1px solid #fff;
 }
 
 .project-tile li {
 	margin-top: 10px;
 	font-size: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  div.left-tile {
+  	display: none;
+  }
 }

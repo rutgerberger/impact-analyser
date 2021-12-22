@@ -52,21 +52,21 @@ function ProjectsPage() {
         <NavBar />
         <div>
             <div >
-                <div className=''>
                 <Link className='' to='/new'>
                     <Button className='button-new-project' text='Create new project' />
                 </Link>
-                </div>
 
                 <div className=''>
                     {projects.map((project) => (
+                        <Link to='/edit'>
                         <ProjectTile
                             name={project.name}
                             id={project.id}
                             mainContributor={project.mainContributor}
                             totalHours={project.totalHours}
                             contributors={project.contributors}
-                        />  
+                        />
+                        </Link>
                     ))}
                 </div>
            </div>
