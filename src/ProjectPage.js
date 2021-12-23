@@ -1,14 +1,15 @@
 import React, { useState, onChange } from 'react';
 import NavBar from './components/NavBar';
 import Button from './components/Button';
+import Popup from './components/Popup'
 import { useParams } from 'react-router';
 
 function ProjectPage() {
     const params = useParams()
+    //used to show / not show the add item popup
+    const [popUp, setPopUp] = useState(false);
 
-    function helloWorld(){
-        return "hello"
-    }
+    //complete list of items
     const [items, setItems] = useState([{
         id: 0,
         title: "Define header",
@@ -43,6 +44,9 @@ function ProjectPage() {
         minutes: 30
     }]);
 
+    //used to edit difficulty / hours / minutes values
+    //of tasks
+    //updates the items
     const editValue = index => e => {
         console.log(e.target.value);
         console.log('property name: '+ e.target.name);
@@ -57,6 +61,8 @@ function ProjectPage() {
         })
     };
 
+    //compute the average of the difficulty of every
+    //task and return this as a float
     const averageDifficulty = () => {
 
         var total = 0;
@@ -70,7 +76,9 @@ function ProjectPage() {
         return avg;
     };
 
-    const averageTime = () => {
+    //calculate the total time:
+    //add up every hour and minutes of every task
+    const totalTime = () => {
 
         var totalHours = 0;
         var totalMinutes = 0;
@@ -81,12 +89,52 @@ function ProjectPage() {
             size+=1;
         })
 
-        var avg = (totalHours*60 + totalMinutes) / size;
-        return (avg/60);
+        //add the extra minutes to these hours
+        var e_hours = (totalMinutes - (totalMinutes % 60)) / 60;
+        totalHours += e_hours
+
+        //and return the total hours and the remainder of the minutes 
+        var total = totalHours + ":" + totalMinutes % 60
+        return total;
     };
 
+    const computeMaxID = () => {
+
+        var max_id = 0;
+        items.map(item => {
+            if (item.id > max_id) {
+                max_id = item.id;
+            }
+        })
+        console.log(max_id)
+        return(max_id);
+
+    }
+
+    //prevents the form from submitting
+    //however, saves the values in a new
+    //array and add this to the complete
+    //list of items
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        var newlist = items;
+        newlist.push({
+            id: e.target.aid.value,
+            title: e.target.atitle.value,
+            description: e.target.adescription.value,
+            user: e.target.auser.value,
+            difficulty: e.target.adifficulty.value,
+            hours: e.target.ahours.value,
+            minutes: e.target.aminutes.value,
+        })
+        setItems(newlist)
+        setPopUp(!popUp)
+    }
+
+    //return the html page
     return (
-        <div class="styling" style={{color: "black"}}>
+        <div className="styling" style={{color: "black"}}>
             <NavBar />
             <div className="container">
                 <form>
@@ -122,14 +170,36 @@ function ProjectPage() {
                             <td></td>
                             <td>Average / total</td>
                             <td></td>
-                            <td className="averageDifficulty">{averageDifficulty()}</td>
-                            <td>{averageTime()}</td>
+                            <td>{averageDifficulty()}</td>
+                            <td>{totalTime()}</td>
                         </tr>
                         </tbody>
                     </table>
                 </form>
+                {popUp && <Popup content={
+
+                    <form onSubmit={(e)=>handleSubmit(e)}>
+                        <label>ID</label>
+                        <input className=''  value={computeMaxID()} type='text' name='aid' placeholder={computeMaxID()}/><br/>
+                        <label>Title</label>
+                        <input className=''  type='text' name='atitle' placeholder='Title'/><br/>
+                        <label>Description</label>
+                        <input className=''  type='text' name='adescription' placeholder='Description'/><br/>
+                        <label>User</label>
+                        <input className=''  type='text' name='auser' placeholder='User'/><br/>
+                        <label>Difficulty</label>
+                        <input className=''  type='range' max="10" min="0" name='adifficulty' placeholder='Difficulty'/><br/>
+                        <label>Hours</label>
+                        <input className=''  type='number' max="72" min="0" name= 'ahours' placeholder='00'/><br/>
+                        <label>Minutes</label>
+                        <input className=''  type='number' max="60" min="0" name= 'aminutes' placeholder='00'/>
+                        <button className="button-add" type="submit">Add</button>
+                    </form>
+                }
+                handleClose={handleSubmit}
+                />}
             </div>
-            <Button className="button-add-item" text="Add New Item"/>
+            {!popUp && <Button className="button-add-item" text="Add New Item" onClick={() => setPopUp(!popUp)}/>}
         </div>
     )
 }
