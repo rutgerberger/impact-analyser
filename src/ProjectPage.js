@@ -1,10 +1,13 @@
 import React, { useState, onChange } from 'react';
 import NavBar from './components/NavBar';
 import Button from './components/Button';
+import Popup from './components/Popup'
 import { useParams } from 'react-router';
 
-function ProjectPage({ match }) {
+function ProjectPage() {
     const params = useParams()
+
+    const [popUp, setPopUp] = useState(false);
 
     const [items, setItems] = useState([{
         id: 0,
@@ -68,7 +71,7 @@ function ProjectPage({ match }) {
         return avg;
     };
 
-    const averageTime = () => {
+    const totalTime = () => {
 
         var totalHours = 0;
         var totalMinutes = 0;
@@ -79,12 +82,49 @@ function ProjectPage({ match }) {
             size+=1;
         })
 
-        var avg = (totalHours*60 + totalMinutes) / size;
-        return (avg/60);
+        var total = (totalHours*60 + totalMinutes) / 60;
+        return total;
     };
 
+    const addItem = (item) => {
+        var newlist = items
+        newlist.push({
+            id: 5,
+            title: "Hello",
+            description: "World!",
+            user: "Sjaak",
+            difficulty: 6,
+            hours: 0,
+            minutes: 30
+        });
+        setItems(newlist);
+        console.log(items);
+        setPopUp(!popUp);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(e.target.aid.value)
+        console.log(e.target.aid.value)
+        console.log(e.target.aid.value)
+        console.log(e.target.aid.value)
+
+        var newlist = items;
+        newlist.push({
+            id: e.target.aid.value,
+            title: e.target.atitle.value,
+            description: e.target.adescription.value,
+            user: e.target.auser.value,
+            difficulty: e.target.adifficulty.value,
+            hours: e.target.ahours.value,
+            minutes: e.target.aminutes.value,
+        })
+        setItems(newlist)
+        setPopUp(!popUp)
+    }
+
     return (
-        <div class="styling" style={{color: "black"}}>
+        <div className="styling" style={{color: "black"}}>
             <NavBar />
             <div className="container">
                 <form>
@@ -121,13 +161,34 @@ function ProjectPage({ match }) {
                             <td>Average / total</td>
                             <td></td>
                             <td>{averageDifficulty()}</td>
-                            <td>{averageTime()}</td>
+                            <td>{totalTime()}</td>
                         </tr>
                         </tbody>
                     </table>
                 </form>
+                {popUp && <Popup content={
+
+                    <form onSubmit={(e)=>handleSubmit(e)}>
+                        <input className=''  type='text' name='aid' placeholder='ID'/><br/>
+                        <label>Title</label>
+                        <input className=''  type='text' name='atitle' placeholder='Title'/><br/>
+                        <label>Description</label>
+                        <input className=''  type='text' name='adescription' placeholder='Description'/><br/>
+                        <label>User</label>
+                        <input className=''  type='text' name='auser' placeholder='User'/><br/>
+                        <label>Difficulty</label>
+                        <input className=''  type='range' max="10" min="0" name='adifficulty' placeholder='Difficulty'/><br/>
+                        <label>Hours</label>
+                        <input className=''  type='number' max="72" min="0" name= 'ahours' placeholder='00'/><br/>
+                        <label>Minutes</label>
+                        <input className=''  type='number' max="60" min="0" name= 'aminutes' placeholder='00'/>
+                        <button className="button-add" type="submit">Add</button>
+                    </form>
+                }
+                handleClose={handleSubmit}
+                />}
             </div>
-            <Button className="button-add-item" text="Add New Item"/>
+            {!popUp && <Button className="button-add-item" text="Add New Item" onClick={() => setPopUp(!popUp)}/>}
         </div>
     )
 }
