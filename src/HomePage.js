@@ -1,7 +1,6 @@
 import React from 'react'
 import NavBar from './components/NavBar'
-import { Link } from "react-router-dom";
-import './components/css/home.css'
+import { Link, BrowserRouter as Router } from "react-router-dom";
 
 function HomePage() {
 
@@ -17,27 +16,27 @@ function HomePage() {
 
           </div>
           <div className= 'content-container'>
-              <Link to='/projects'className='button-home'>
+              <Router><Link to='/projects'className='button-home'>
 
                 <div>
                   Projects
                 </div>
 
-              </Link>
-              <Link to='/profile'className='button-home'>
+              </Link></Router>
+              <Router><Link to='/profile'className='button-home'>
 
                 <div>
                   Profile
                 </div>
 
-              </Link>
-              <Link to='/about' className='button-home'>
+              </Link></Router>
+              <Router><Link to='/about' className='button-home'>
 
                 <div>
                   About
                 </div>
 
-              </Link>
+              </Link></Router>
           </div>
         </div>
       </div>

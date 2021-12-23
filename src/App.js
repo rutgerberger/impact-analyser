@@ -8,7 +8,6 @@ import ProjectsPage from './ProjectsPage';
 import ProfilePage from './ProfilePage';
 import NewProjectPage from './NewProjectPage';
 import ProjectPage from './ProjectPage';
-import './components/css/common.css'
 
 
 function App() {

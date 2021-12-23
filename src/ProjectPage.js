@@ -3,9 +3,12 @@ import NavBar from './components/NavBar';
 import Button from './components/Button';
 import { useParams } from 'react-router';
 
-function ProjectPage({ match }) {
+function ProjectPage() {
     const params = useParams()
 
+    function helloWorld(){
+        return "hello"
+    }
     const [items, setItems] = useState([{
         id: 0,
         title: "Define header",
@@ -60,7 +63,6 @@ function ProjectPage({ match }) {
         var size = 0;
         items.map(item => {
             total+=Number(item.difficulty);
-            console.log("Total:", total)
             size+=1;
         })
 
@@ -120,7 +122,7 @@ function ProjectPage({ match }) {
                             <td></td>
                             <td>Average / total</td>
                             <td></td>
-                            <td>{averageDifficulty()}</td>
+                            <td className="averageDifficulty">{averageDifficulty()}</td>
                             <td>{averageTime()}</td>
                         </tr>
                         </tbody>

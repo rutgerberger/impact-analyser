@@ -1,17 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import './css/home.css'
-
+import { Link, BrowserRouter as Router } from "react-router-dom";
 
 function NavBar({ }) {
     return(
         <nav className='navbar'>
-            <Link className='nav-button' to='/'>
+            <Router> <Link className='nav-button' to='/'>
                 Impact Analyser
-            </Link>
-            <Link className='nav-button' to='/'>
+            </Link></Router>
+            <Router><Link className='nav-button' to='/'>
                 Contact
-            </Link>
+            </Link></Router>
         </nav> 
     );
 }

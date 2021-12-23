@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="left-tile"
+  >
+    <ul>
+      <li>
+        Name:
+      </li>
+      <li>
+        ID:
+      </li>
+      <li>
+        Main Contributor:
+      </li>
+      <li>
+        Expected Hours of Work:
+      </li>
+      <li>
+        No. of contributors:
+      </li>
+    </ul>
+  </div>
+  <div
+    className="project-tile"
+  >
+    <ul>
+      <li
+        className="project-tile-title"
+      />
+      <li />
+      <li />
+      <li />
+      <li />
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="styling"
+>
+  <nav
+    className="navbar"
+  >
+     
+    <a
+      className="nav-button"
+      href="/"
+      onClick={[Function]}
+    >
+      Impact Analyser
+    </a>
+    <a
+      className="nav-button"
+      href="/"
+      onClick={[Function]}
+    >
+      Contact
+    </a>
+  </nav>
+  <div
+    className="header"
+  >
+    <h2>
+      IMPACT ANALYSER
+    </h2>
+    <p>
+      MAKING TASK DIVIDING EASY
+    </p>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="fancy-image"
+    />
+    <div
+      className="content-container"
+    >
+      <a
+        className="button-home"
+        href="/projects"
+        onClick={[Function]}
+      >
+        <div>
+          Projects
+        </div>
+      </a>
+      <a
+        className="button-home"
+        href="/profile"
+        onClick={[Function]}
+      >
+        <div>
+          Profile
+        </div>
+      </a>
+      <a
+        className="button-home"
+        href="/about"
+        onClick={[Function]}
+      >
+        <div>
+          About
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 3`] = `
+<nav
+  className="navbar"
+>
+   
+  <a
+    className="nav-button"
+    href="/"
+    onClick={[Function]}
+  >
+    Impact Analyser
+  </a>
+  <a
+    className="nav-button"
+    href="/"
+    onClick={[Function]}
+  >
+    Contact
+  </a>
+</nav>
+`;
