@@ -6,9 +6,10 @@ import { useParams } from 'react-router';
 
 function ProjectPage() {
     const params = useParams()
-
+    //used to show / not show the add item popup
     const [popUp, setPopUp] = useState(false);
 
+    //complete list of items
     const [items, setItems] = useState([{
         id: 0,
         title: "Define header",
@@ -43,6 +44,9 @@ function ProjectPage() {
         minutes: 30
     }]);
 
+    //used to edit difficulty / hours / minutes values
+    //of tasks
+    //updates the items
     const editValue = index => e => {
         console.log(e.target.value);
         console.log('property name: '+ e.target.name);
@@ -57,6 +61,8 @@ function ProjectPage() {
         })
     };
 
+    //compute the average of the difficulty of every
+    //task and return this as a float
     const averageDifficulty = () => {
 
         var total = 0;
@@ -71,6 +77,8 @@ function ProjectPage() {
         return avg;
     };
 
+    //calculate the total time:
+    //add up every hour and minutes of every task
     const totalTime = () => {
 
         var totalHours = 0;
@@ -82,32 +90,34 @@ function ProjectPage() {
             size+=1;
         })
 
-        var total = (totalHours*60 + totalMinutes) / 60;
+        //add the extra minutes to these hours
+        var e_hours = (totalMinutes - (totalMinutes % 60)) / 60;
+        totalHours += e_hours
+
+        //and return the total hours and the remainder of the minutes 
+        var total = totalHours + ":" + totalMinutes % 60
         return total;
     };
 
-    const addItem = (item) => {
-        var newlist = items
-        newlist.push({
-            id: 5,
-            title: "Hello",
-            description: "World!",
-            user: "Sjaak",
-            difficulty: 6,
-            hours: 0,
-            minutes: 30
-        });
-        setItems(newlist);
-        console.log(items);
-        setPopUp(!popUp);
+    const computeMaxID = () => {
+
+        var max_id = 0;
+        items.map(item => {
+            if (item.id > max_id) {
+                max_id = item.id;
+            }
+        })
+        console.log(max_id)
+        return(max_id);
+
     }
 
+    //prevents the form from submitting
+    //however, saves the values in a new
+    //array and add this to the complete
+    //list of items
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e.target.aid.value)
-        console.log(e.target.aid.value)
-        console.log(e.target.aid.value)
-        console.log(e.target.aid.value)
 
         var newlist = items;
         newlist.push({
@@ -123,6 +133,7 @@ function ProjectPage() {
         setPopUp(!popUp)
     }
 
+    //return the html page
     return (
         <div className="styling" style={{color: "black"}}>
             <NavBar />
@@ -169,7 +180,8 @@ function ProjectPage() {
                 {popUp && <Popup content={
 
                     <form onSubmit={(e)=>handleSubmit(e)}>
-                        <input className=''  type='text' name='aid' placeholder='ID'/><br/>
+                        <label>ID</label>
+                        <input className=''  value={computeMaxID()} type='text' name='aid' placeholder={computeMaxID()}/><br/>
                         <label>Title</label>
                         <input className=''  type='text' name='atitle' placeholder='Title'/><br/>
                         <label>Description</label>
