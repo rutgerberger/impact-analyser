@@ -1,0 +1,98 @@
+
+
+.profile-header-section {
+  background-color: #474e5d;
+  text-align: center;
+  padding: 50px;
+  color: white;
+}
+.profile-section {
+  display: flex;
+  justify-content: space-around;
+  border: 3px solid #555;
+}
+
+.profile-bottom:after {
+    content: '';
+    position: absolute;
+    top: -46px;
+    background: #fff;
+    left: -22px;
+    right: 0;
+    height: 100px;
+    transform: rotate(10deg);
+    width: 337px;
+    z-index: -1;
+  }
+
+  .profile-h {
+      color:black;
+      text-align: center;
+  }
+  
+  .profile-bottom .title {
+    margin-bottom: 20px;
+  }
+  
+  .profile-bottom .title h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: black;
+  }
+  
+  .profile-title small {
+    font-size: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  ul.profile-tasks .profile-task-title {
+    font-size: 13px;
+    display: inline-block;
+    color: black;
+  }
+  
+  ul.profile-tasks .profile-task-project {
+    font-size: 10px;
+    display: block;
+    color: #888;
+  }
+  
+  ul.profile-tasks li {
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 8;
+  }
+  
+  ul.profile-tasks li:after {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: 8px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+  }
+  
+  ul.profile-tasks li.red:after {
+    background: #FF3163;
+  }
+  
+  ul.tasks li.two-green:after {
+    background: #54D6C7;
+  }
+  
+  ul.tasks li.yellow:after {
+    background: #EAB429;
+  }
+  
+  ul.tasks::after {
+    content: '';
+    position: absolute;
+    height: 400px;
+    width: 1px;
+    background: #eee;
+    left: 20px;
+    top: -68px;
+  }

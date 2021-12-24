@@ -4,12 +4,12 @@ import { Link, BrowserRouter as Router } from "react-router-dom";
 function NavBar({ }) {
     return(
         <nav className='navbar'>
-            <Router> <Link className='nav-button' to='/'>
+            <Link className='nav-button' to='/'>
                 Impact Analyser
-            </Link></Router>
-            <Router><Link className='nav-button' to='/'>
+            </Link>
+            <Link className='nav-button' to='/about'>
                 Contact
-            </Link></Router>
+            </Link>
         </nav> 
     );
 }

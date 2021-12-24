@@ -182,17 +182,17 @@ function ProjectPage() {
                         <label>ID</label>
                         <input className=''  value={computeMaxID()} type='text' name='aid' placeholder={computeMaxID()}/><br/>
                         <label>Title</label>
-                        <input className=''  type='text' name='atitle' placeholder='Title'/><br/>
+                        <input className=''  type='text' name='atitle' placeholder='Title' required /><br/>
                         <label>Description</label>
-                        <input className=''  type='text' name='adescription' placeholder='Description'/><br/>
+                        <input className=''  type='text' name='adescription' placeholder='Description' required /><br/>
                         <label>User</label>
-                        <input className=''  type='text' name='auser' placeholder='User'/><br/>
+                        <input className=''  type='text' name='auser' placeholder='User' required /><br/>
                         <label>Difficulty</label>
-                        <input className=''  type='range' max="10" min="0" name='adifficulty' placeholder='Difficulty'/><br/>
+                        <input className=''  type='range' max="10" min="0" name='adifficulty' placeholder='Difficulty' required /><br/>
                         <label>Hours</label>
-                        <input className=''  type='number' max="72" min="0" name= 'ahours' placeholder='00'/><br/>
+                        <input className='' type='number' max="72" min="0" name= 'ahours' placeholder='00' required /><br/>
                         <label>Minutes</label>
-                        <input className=''  type='number' max="60" min="0" name= 'aminutes' placeholder='00'/>
+                        <input className=''  type='number' max="60" min="0" name= 'aminutes' placeholder='00' required />
                         <button className="button-add" type="submit">Add</button>
                     </form>
                 }
