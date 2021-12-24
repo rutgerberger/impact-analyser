@@ -4,7 +4,7 @@ Node.js
 npm
 
 ## Run the code (first time)
-$ npm install (-force)
+$ npm install (-force) or yarn
 $ npm start
 
 ## Run the code
